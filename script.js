@@ -10,7 +10,7 @@ arr.forEach((button) => {
 
         if (value === "=") {
             try {
-                // For percentage, convert 'X%' to '(X/100)' before evaluating
+                
                 string = string.replace(/%/g, '/100');
                 string = eval(string);
                 input.value = string;
