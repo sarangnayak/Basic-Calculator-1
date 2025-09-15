@@ -1,18 +1,21 @@
+/* === Importing Google Font (Poppins) === */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap');
 
+/* === CSS Variables for Colors and Theme === */
 :root {
-    --primary-color: #00aaff;
-    --operator-color: #00d5ff;
-    --clear-color: #ff5e00;
-    --equals-color: #007bff;
-    --background-start: #3a1c71;
-    --background-mid: #d76d77;
-    --background-end: #ffaf7b;
-    --text-color: #ffffff;
-    --card-background: rgba(255, 255, 255, 0.1);
-    --border-color: rgba(255, 255, 255, 0.2);
+    --primary-color: #00aaff;        /* General primary color */
+    --operator-color: #00d5ff;       /* Operator button text color */
+    --clear-color: #ff5e00;          /* Clear/Delete button color */
+    --equals-color: #007bff;         /* Equal (=) button background */
+    --background-start: #3a1c71;     /* Gradient start */
+    --background-mid: #d76d77;       /* Gradient middle */
+    --background-end: #ffaf7b;       /* Gradient end */
+    --text-color: #ffffff;           /* General text color */
+    --card-background: rgba(255, 255, 255, 0.1); /* Calculator background (glass effect) */
+    --border-color: rgba(255, 255, 255, 0.2);   /* Border for glass card */
 }
 
+/* === Reset & Base Styles === */
 * {
     margin: 0;
     padding: 0;
@@ -20,95 +23,108 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* === Body (Center Calculator & Animated Gradient BG) === */
 body {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
     background: linear-gradient(45deg, var(--background-start), var(--background-mid), var(--background-end));
-    background-size: 400% 400%;
-    animation: gradientAnimation 15s ease infinite;
+    background-size: 400% 400%;              /* For smooth movement */
+    animation: gradientAnimation 15s ease infinite; /* Infinite background animation */
 }
 
+/* === Gradient Background Animation === */
 @keyframes gradientAnimation {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
 }
 
+/* === Calculator Container (Glassmorphism Style) === */
 .calculator {
     padding: 1.5rem;
     border-radius: 20px;
     background: var(--card-background);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);            /* Blur effect */
+    -webkit-backdrop-filter: blur(10px);    /* Safari support */
     border: 1px solid var(--border-color);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-    animation: fadeIn 0.5s ease-out;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37); /* Shadow for depth */
+    animation: fadeIn 0.5s ease-out;        /* Fade-in effect */
 }
 
+/* === Fade In Animation for Calculator === */
 @keyframes fadeIn {
     from { opacity: 0; transform: scale(0.95); }
     to { opacity: 1; transform: scale(1); }
 }
 
+/* === Calculator Display/Input === */
 #inputBox {
     width: 100%;
     border: none;
     padding: 1.5rem 1rem;
     margin-bottom: 1rem;
-    background: transparent;
+    background: transparent;         /* Transparent to show glass background */
     font-size: 3rem;
     text-align: right;
     color: var(--text-color);
-    pointer-events: none; 
+    pointer-events: none;            /* Prevent typing directly */
 }
 
+/* Placeholder Style */
 #inputBox::placeholder {
     color: rgba(255, 255, 255, 0.8);
 }
 
+/* === Row for Buttons === */
 .row {
     display: flex;
     justify-content: space-between;
 }
 
+/* === General Button Styles === */
 .button {
     border: none;
     width: 65px;
     height: 65px;
     margin: 0.5rem;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;                       /* Circular buttons */
+    background: rgba(255, 255, 255, 0.15);    /* Semi-transparent */
     color: var(--text-color);
     font-size: 1.5rem;
     font-weight: 500;
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: all 0.2s ease;                /* Smooth hover/active effects */
 }
 
+/* Hover Effect */
 .button:hover {
     background: rgba(255, 255, 255, 0.25);
     transform: scale(1.05);
 }
 
+/* Active/Pressed Effect */
 .button:active {
     transform: scale(0.95);
 }
 
+/* === Special Button Colors === */
 .equalBtn {
-    background-color: var(--equals-color);
+    background-color: var(--equals-color); /* Blue background for "=" */
 }
 
 .operator {
-    color: var(--operator-color);
+    color: var(--operator-color);          /* Light blue text for operators */
 }
 
+/* Clear & Delete Buttons (Orange Text) */
 button[aria-label="Clear All"], 
 button[aria-label="Delete"] {
     color: var(--clear-color);
 }
 
+/* === Responsive Design (Mobile) === */
 @media (max-width: 480px) {
     .calculator {
         padding: 1rem;
