@@ -1,46 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Advance Calculator</title>
-    <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8" /> <!-- Sets character encoding to UTF-8 for proper text rendering -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Ensures responsive design on all devices -->
+    <title>Advance Calculator</title> <!-- Page title shown in the browser tab -->
+    <link rel="stylesheet" href="style.css"/> <!-- Linking external CSS file for styling -->
 </head>
 <body>
+    <!-- Calculator Container -->
     <div class="calculator">
+        <!-- Display Screen (readonly so users cannot type manually) -->
         <input type="text" id="inputBox" placeholder="0" readonly />
+
+        <!-- Row 1: Clear, Delete, Percentage, Division -->
         <div class="row">
-            <button class="button operator" aria-label="Clear All">AC</button>
-            <button class="button operator" aria-label="Delete">DEL</button>
-            <button class="button operator" aria-label="Percentage">%</button>
-            <button class="button operator" aria-label="Divide">/</button>
+            <button class="button operator" aria-label="Clear All">AC</button> <!-- Clear all input -->
+            <button class="button operator" aria-label="Delete">DEL</button> <!-- Delete last entry -->
+            <button class="button operator" aria-label="Percentage">%</button> <!-- Percentage operator -->
+            <button class="button operator" aria-label="Divide">/</button> <!-- Division operator -->
         </div>
+
+        <!-- Row 2: Numbers 7,8,9 and Multiplication -->
         <div class="row">
             <button class="button">7</button>
             <button class="button">8</button>
             <button class="button">9</button>
-            <button class="button operator" aria-label="Multiply">*</button>
+            <button class="button operator" aria-label="Multiply">*</button> <!-- Multiplication operator -->
         </div>
+
+        <!-- Row 3: Numbers 4,5,6 and Subtraction -->
         <div class="row">
             <button class="button">4</button>
             <button class="button">5</button>
             <button class="button">6</button>
-            <button class="button operator" aria-label="Subtract">-</button>
+            <button class="button operator" aria-label="Subtract">-</button> <!-- Subtraction operator -->
         </div>
+
+        <!-- Row 4: Numbers 1,2,3 and Addition -->
         <div class="row">
             <button class="button">1</button>
             <button class="button">2</button>
             <button class="button">3</button>
-            <button class="button operator" aria-label="Add">+</button>
+            <button class="button operator" aria-label="Add">+</button> <!-- Addition operator -->
         </div>
+
+        <!-- Row 5: Double zero, zero, decimal, equals -->
         <div class="row">
-            <button class="button">00</button>
-            <button class="button">0</button>
-            <button class="button">.</button>
-            <button class="button equalBtn" aria-label="Equals">=</button>
+            <button class="button">00</button> <!-- Double zero -->
+            <button class="button">0</button> <!-- Single zero -->
+            <button class="button">.</button> <!-- Decimal point -->
+            <button class="button equalBtn" aria-label="Equals">=</button> <!-- Equal button to calculate result -->
         </div>
     </div>
 
+    <!-- Linking external JavaScript file for calculator functionality -->
     <script src="script.js"></script>
 </body>
 </html>
